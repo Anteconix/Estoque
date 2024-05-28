@@ -22,12 +22,10 @@ namespace Teste
         private string rg = "123";
         private string apelido = "Xunda";
 
-
         public static ClienteBuilder Novo()
         {
             return new ClienteBuilder();
         }
-
 
         public Cliente Criar() 
         {
@@ -41,7 +39,6 @@ namespace Teste
                 rg,
                 apelido);
         }
-
 
         public ClienteBuilder GerarDados()
         {
@@ -59,20 +56,17 @@ namespace Teste
             return this;
         }
 
-
         public ClienteBuilder ComCodigo(int cod)
         {
             this.codigo = cod;
             return this;
         }
 
-
         public ClienteBuilder ComNome(string nom)
         {
             this.nome = nom;
             return this;
         }
-
 
         public ClienteBuilder ComEndereco(string end)
         {
@@ -103,12 +97,10 @@ namespace Teste
             this.rg = rg;
             return this;
         }
-
         public ClienteBuilder ComApelido(string apelido)
         {
             this.apelido = apelido;
             return this;
         }
-
     }
 }

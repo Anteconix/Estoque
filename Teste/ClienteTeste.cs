@@ -30,11 +30,9 @@ namespace Teste
             // Act
 
             // Assert com ExpectedObject
+
             clienteEsperado.ToExpectedObject().ShouldMatch(cli);
         }
-
-
-
 
         [Theory]
         [InlineData(null)]
@@ -49,7 +47,6 @@ namespace Teste
 
         }
 
-
         [Theory]
         [InlineData(null)]
         [InlineData("")]
@@ -61,8 +58,6 @@ namespace Teste
             );
 
         }
-
-
 
         [Theory]
         [InlineData(null)]
@@ -76,8 +71,6 @@ namespace Teste
 
         }
 
-
-
         [Theory]
         [InlineData(null)]
         [InlineData("")]
@@ -89,8 +82,6 @@ namespace Teste
             );
 
         }
-
-
 
         [Theory]
         [InlineData(null)]
@@ -104,7 +95,6 @@ namespace Teste
             );
             
         }
-
 
         [Theory]
         [InlineData(null)]
@@ -134,5 +124,16 @@ namespace Teste
 
         }
 
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        public void ClienteDuplicado(string rg)
+        {
+            Assert.Throws<ArgumentException>(
+                () =>
+                ClienteBuilder.Novo().GerarDados().ComRg(rg).Criar()
+            );
+
+        }
     }
 }

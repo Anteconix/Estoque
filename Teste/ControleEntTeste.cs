@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Teste
 {
-    public class Controleteste
+    public class ControleEntTeste
     {
         [Fact]
         public void CriarObjetoControle()
         {
             // Arrange com objeto anônimo
-            var con = ControleBuilder.NovoCon().GerarDadosCon().CriarCon();
+            var con = ControleEntBuilder.NovoCon().GerarDadosConEnt().CriarCon();
 
             var controleEsperado = new
             {
-                Quantidade = con.Quantidade,
-                Valor_compra = con.Valor_compra,
+                Quantidadeent = con.Quantidadeent,
+                Valor_compraent = con.Valor_compraent,
                 Data_entrada = con.Data_entrada,
-                Fornecedor = con.Fornecedor,
-                Num_fatura = con.Num_fatura,
+                Fornecedorent = con.Fornecedorent,
+                Num_faturaent = con.Num_faturaent,
                 Motivo_ent = con.Motivo_ent
             };
 
@@ -35,11 +35,11 @@ namespace Teste
         [InlineData(null)]
         [InlineData(0)]
         [InlineData(-1)]
-        public void ControleQuaInvalido(int qua_con)
+        public void ControleQuaEntInvalido(int qua_conent)
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleBuilder.NovoCon().GerarDadosCon().ComQuaCon(qua_con).CriarCon()
+                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComQuaConEnt(qua_conent).CriarCon()
             ).ComMensagem("Quantidade inválida");
 
         }
@@ -47,11 +47,11 @@ namespace Teste
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void ControleValComInvalido(string valcom_con)
+        public void ControleValComEntInvalido(string valcom_conent)
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleBuilder.NovoCon().GerarDadosCon().ComValComCon(valcom_con).CriarCon()
+                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComValComConEnt(valcom_conent).CriarCon()
             ).ComMensagem("Valor da compra inválido");
 
         }
@@ -63,7 +63,7 @@ namespace Teste
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleBuilder.NovoCon().GerarDadosCon().ComDatEntCon(datent_con).CriarCon()
+                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComDatConEnt(datent_con).CriarCon()
             ).ComMensagem("Data de entrada inválida");
 
         }
@@ -71,11 +71,11 @@ namespace Teste
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void ControleForInvalido(string for_con)
+        public void ControleForInvalido(string for_conent)
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleBuilder.NovoCon().GerarDadosCon().ComForCon(for_con).CriarCon()
+                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComForConEnt(for_conent).CriarCon()
             ).ComMensagem("Fornecedor inválido");
 
         }
@@ -84,22 +84,22 @@ namespace Teste
         [InlineData(null)]
         [InlineData(0)]
         [InlineData(-1)]
-        public void ControleNumFatInvalido(int numfat_con)
+        public void ControleNumFatInvalido(int numfat_conent)
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleBuilder.NovoCon().GerarDadosCon().ComNumFatCon(numfat_con).CriarCon()
+                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComNumFatConEnt(numfat_conent).CriarCon()
             ).ComMensagem("Número da fatura inválido");
         }
 
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void ControleMotEntInvalido(string motent_con)
+        public void ControleMotEntInvalido(string motent_conent)
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleBuilder.NovoCon().GerarDadosCon().ComMotEntCon(motent_con).CriarCon()
+                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComMotConEnt(motent_conent).CriarCon()
             ).ComMensagem("Motivo de entrada inválido");
 
         }

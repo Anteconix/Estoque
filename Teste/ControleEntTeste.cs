@@ -13,9 +13,9 @@ namespace Teste
         public void CriarObjetoControle()
         {
             // Arrange com objeto anônimo
-            var con = ControleEntBuilder.NovoCon().GerarDadosConEnt().CriarCon();
+            var con = ControleEntBuilder.NovoConEnt().GerarDadosConEnt().CriarConEnt();
 
-            var controleEsperado = new
+            var controleEntEsperado = new
             {
                 Quantidadeent = con.Quantidadeent,
                 Valor_compraent = con.Valor_compraent,
@@ -28,7 +28,7 @@ namespace Teste
             // Act
 
             // Assert com ExpectedObject
-            controleEsperado.ToExpectedObject().ShouldMatch(con);
+            controleEntEsperado.ToExpectedObject().ShouldMatch(con);
         }
 
         [Theory]
@@ -39,7 +39,7 @@ namespace Teste
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComQuaConEnt(qua_conent).CriarCon()
+                ControleEntBuilder.NovoConEnt().GerarDadosConEnt().ComQuaConEnt(qua_conent).CriarConEnt()
             ).ComMensagem("Quantidade inválida");
 
         }
@@ -51,7 +51,7 @@ namespace Teste
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComValComConEnt(valcom_conent).CriarCon()
+                ControleEntBuilder.NovoConEnt().GerarDadosConEnt().ComValComConEnt(valcom_conent).CriarConEnt()
             ).ComMensagem("Valor da compra inválido");
 
         }
@@ -63,7 +63,7 @@ namespace Teste
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComDatConEnt(datent_con).CriarCon()
+                ControleEntBuilder.NovoConEnt().GerarDadosConEnt().ComDatConEnt(datent_con).CriarConEnt()
             ).ComMensagem("Data de entrada inválida");
 
         }
@@ -75,7 +75,7 @@ namespace Teste
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComForConEnt(for_conent).CriarCon()
+                ControleEntBuilder.NovoConEnt().GerarDadosConEnt().ComForConEnt(for_conent).CriarConEnt()
             ).ComMensagem("Fornecedor inválido");
 
         }
@@ -88,7 +88,7 @@ namespace Teste
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComNumFatConEnt(numfat_conent).CriarCon()
+                ControleEntBuilder.NovoConEnt().GerarDadosConEnt().ComNumFatConEnt(numfat_conent).CriarConEnt()
             ).ComMensagem("Número da fatura inválido");
         }
 
@@ -99,7 +99,7 @@ namespace Teste
         {
             Assert.Throws<ArgumentException>(
                 () =>
-                ControleEntBuilder.NovoCon().GerarDadosConEnt().ComMotConEnt(motent_conent).CriarCon()
+                ControleEntBuilder.NovoConEnt().GerarDadosConEnt().ComMotConEnt(motent_conent).CriarConEnt()
             ).ComMensagem("Motivo de entrada inválido");
 
         }

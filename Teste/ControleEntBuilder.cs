@@ -11,17 +11,17 @@ namespace Teste
     public class ControleEntBuilder
     {
         private int quantidadeent = 1;
-        private string valor_compraent = "6969";
-        private string data_entrada = "6969";
+        private string valor_compraent = "100";
+        private string data_entrada = "100";
         private string fornecedorent = "magno";
         private int num_faturaent = 123;
-        private string motivo_ent = "entrou";
-        public static ControleEntBuilder NovoCon()
+        private string motivo_ent = "tranferência";
+        public static ControleEntBuilder NovoConEnt()
         {
             return new ControleEntBuilder();
         }
 
-        public ControleEnt CriarCon()
+        public ControleEnt CriarConEnt()
         {
             return new ControleEnt(
                 quantidadeent,

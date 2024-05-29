@@ -10,10 +10,10 @@ namespace Teste
 {
     public class ProdutoBuilder
     {
-        private string desc_produto = "magno alugueis";
-        private int cod_barras = 6969;
-        private string preco_compra = "6969";
-        private string preco_venda = "123";
+        private string desc_produto = "lapis";
+        private int cod_barras = 1000;
+        private string preco_compra = "100";
+        private string preco_venda = "150";
 
         public static ProdutoBuilder NovoPro()
         {

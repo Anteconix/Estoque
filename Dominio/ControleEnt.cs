@@ -1,6 +1,4 @@
-﻿using Dominio;
-
-namespace Teste
+﻿namespace Teste
 {
     public class ControleEnt
     {
